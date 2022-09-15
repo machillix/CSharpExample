@@ -55,8 +55,99 @@ namespace MyApp
                 Console.WriteLine("Sukunimesi : " + nameSplit[1]);
             }
             
+            // Tuntiharjoitus 7.
+            Console.WriteLine("Anna Pituusesi");
+            float height = float.Parse(Console.ReadLine());
+            Console.WriteLine("Anna Painosi");
+            float weight = float.Parse(Console.ReadLine());
+
+            float bmi = weight/(height*height);
+            string desc = "";
+            if(bmi < 19){
+                desc = "alipainoinen";
+            } else if (bmi < 25){
+                desc = "normaalipainoinen";
+            }else{
+                desc = "ylipainoinen";
+            }
+
+            Console.WriteLine("Paino Indeksi on : " + bmi + " Olet " + desc);
+
+            // Harjoitus 8.
+            Console.WriteLine("5 "+IsDivTwoAndSeven(5));
+            Console.WriteLine("14 "+IsDivTwoAndSeven(14));
+
+            // Harjoitus 9.
+
+            Console.WriteLine("Anna viikonpäivä numerona");
+            int dayNumber = int.Parse(Console.ReadLine());
+            
+            switch(dayNumber){
+                case 1:{
+                    Console.WriteLine("Maanantai");
+                    break;
+                }
+                case 2:{
+                    Console.WriteLine("Tiistai");
+                    break;
+                }
+                case 3:{
+                    Console.WriteLine("Keskiviikko");
+                    break;
+                }
+                case 4:{
+                    Console.WriteLine("Torstai");
+                    break;
+                }
+                case 5:{
+                    Console.WriteLine("Perjantai");
+                    break;
+                }
+                case 6:{
+                    Console.WriteLine("Lauantai");
+                    break;
+                }
+                case 7:{
+                    Console.WriteLine("Sunnuntai");
+                    break;
+                }
+                default:{
+                    Console.WriteLine("Ei viikonpäivä");
+                    break;
+                }
+            }
+
+            // Harjoitus 10.
+
+            char ascii = (char)0;
+
+            while(ascii != (char)118){
+                Console.WriteLine(ascii);
+                ascii++;
+            }
+
+            // Harjoitus 11.
+            string[] days = {"Ma","Ti","Ke","To","Pe","La","Su"};
+
+            for(int i = 0; i < days.Length;i++){
+                Console.WriteLine(days[i]);
+
+            }
+            // Harjoitus 12.
+            foreach(String day in days){
+                Console.WriteLine(day);
+            } 
 
 
+        }
+
+        static string IsDivTwoAndSeven(int number){
+
+            string answer = "on ei ole jaollinen 2:lla ja 7:lla";
+            if(number % 2 == 0 && number % 7 == 0){
+                answer = "on on jaollinen 2:lla ja 7:lla";
+            }
+            return answer;
         }
 
 
